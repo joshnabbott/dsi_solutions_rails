@@ -3,7 +3,7 @@ class CreateDistributors < ActiveRecord::Migration
     create_table :distributors do |t|
       t.string :name, :initials, :logo, :interests, :tac
       t.text :description, :terms
-      t.boolean :is_deleted, :null => false, :default => false
+      t.boolean :is_deleted, :default => false
 
       t.timestamps
     end

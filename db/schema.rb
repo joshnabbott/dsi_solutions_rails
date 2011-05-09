@@ -10,17 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110509181937) do
+ActiveRecord::Schema.define(:version => 20110509203456) do
 
   create_table "distributors", :force => true do |t|
     t.string   "name"
     t.string   "initials"
-    t.text     "description"
     t.string   "logo"
     t.string   "interests"
-    t.text     "terms"
     t.string   "tac"
-    t.boolean  "is_deleted"
+    t.text     "description"
+    t.text     "terms"
+    t.boolean  "is_deleted",  :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interests", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "offer_id"
+    t.string   "response"
+    t.boolean  "is_deleted", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20110509181937) do
     t.text     "body"
     t.string   "link"
     t.string   "sublink"
-    t.boolean  "is_public"
-    t.boolean  "is_deleted"
+    t.boolean  "is_public",      :default => false
+    t.boolean  "is_deleted",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20110509181937) do
     t.string   "title"
     t.text     "comments"
     t.text     "body"
-    t.boolean  "is_public"
-    t.boolean  "is_deleted"
+    t.boolean  "is_public",  :default => false
+    t.boolean  "is_deleted", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,24 +62,24 @@ ActiveRecord::Schema.define(:version => 20110509181937) do
     t.integer  "user_id"
     t.integer  "offer_id"
     t.string   "saved_type"
-    t.string   "txt"
-    t.integer  "num"
-    t.string   "dmy"
-    t.string   "distributor_health"
-    t.string   "distributor_auto"
-    t.string   "distributor_general"
-    t.string   "distributor_property"
-    t.string   "distributor_umbrella"
-    t.boolean  "is_deleted"
+    t.string   "text"
+    t.integer  "number"
+    t.datetime "day_month_year"
+    t.datetime "health"
+    t.datetime "auto"
+    t.datetime "general"
+    t.datetime "property"
+    t.datetime "umbrella"
+    t.boolean  "is_deleted",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
     t.integer  "distributor_id"
+    t.integer  "logins"
     t.string   "username"
     t.string   "password"
-    t.integer  "logins"
     t.string   "name_first"
     t.string   "name_last"
     t.string   "company"
@@ -83,13 +92,13 @@ ActiveRecord::Schema.define(:version => 20110509181937) do
     t.string   "phone_cell"
     t.string   "fax"
     t.string   "website"
+    t.string   "new"
     t.datetime "signed_up"
     t.datetime "last_login"
-    t.string   "new"
-    t.boolean  "is_admin"
-    t.boolean  "is_updated"
-    t.boolean  "is_active"
-    t.boolean  "is_deleted"
+    t.boolean  "is_admin",       :default => false
+    t.boolean  "is_updated",     :default => false
+    t.boolean  "is_active",      :default => false
+    t.boolean  "is_deleted",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

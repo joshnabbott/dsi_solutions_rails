@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :logins
       t.string :username, :password, :name_first, :name_last, :company, :annual_volume, :address, :city, :state, :zip_code, :phone_office, :phone_cell, :fax, :website, :new
       t.datetime :signed_up, :last_login
-      t.boolean :is_admin, :is_updated, :is_active, :is_deleted
+      t.boolean :is_admin, :is_updated, :is_active, :is_deleted, :default => false
 
       t.timestamps
     end

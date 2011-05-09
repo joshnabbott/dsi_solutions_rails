@@ -2,10 +2,10 @@ class CreateSaveds < ActiveRecord::Migration
   def self.up
     create_table :saveds do |t|
       t.belongs_to :user, :offer
-      t.string :saved_type, :txt
-      t.integer :num
-      t.string :dmy, :distributor_health, :distributor_auto, :distributor_general, :distributor_property, :distributor_umbrella
-      t.boolean :is_deleted, :null => false, :default => false
+      t.string :saved_type, :text
+      t.integer :number
+      t.datetime :day_month_year, :health, :auto, :general, :property, :umbrella
+      t.boolean :is_deleted, :default => false
 
       t.timestamps
     end

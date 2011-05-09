@@ -3,7 +3,7 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.string :title
       t.text :comments, :body
-      t.boolean :is_public, :is_deleted, :null => false, :default => false
+      t.boolean :is_public, :is_deleted, :default => false
 
       t.timestamps
     end

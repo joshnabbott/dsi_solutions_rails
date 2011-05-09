@@ -5,7 +5,7 @@ class CreateOffers < ActiveRecord::Migration
       t.string :name
       t.text :description, :body
       t.string :link, :sublink
-      t.boolean :is_public, :is_deleted, :null => false, :default => false
+      t.boolean :is_public, :is_deleted, :default => false
 
       t.timestamps
     end
