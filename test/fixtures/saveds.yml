@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  offer: 
+  saved_type: MyString
+  txt: MyString
+  num: 1
+  dmy: MyString
+  distributor_health: MyString
+  distributor_auto: MyString
+  distributor_general: MyString
+  distributor_property: MyString
+  distributor_umbrella: MyString
+  is_deleted: false
+
+two:
+  user: 
+  offer: 
+  saved_type: MyString
+  txt: MyString
+  num: 1
+  dmy: MyString
+  distributor_health: MyString
+  distributor_auto: MyString
+  distributor_general: MyString
+  distributor_property: MyString
+  distributor_umbrella: MyString
+  is_deleted: false

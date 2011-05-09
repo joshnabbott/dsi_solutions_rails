@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  distributor: 
+  parent: 
+  name: MyString
+  description: MyText
+  body: MyText
+  link: MyString
+  sublink: MyString
+  is_public: false
+  is_deleted: false
+
+two:
+  distributor: 
+  parent: 
+  name: MyString
+  description: MyText
+  body: MyText
+  link: MyString
+  sublink: MyString
+  is_public: false
+  is_deleted: false
