@@ -64,30 +64,30 @@ old_pages.each do |old_page|
   puts page.save
 end
 
-##########################################################
-# Import Saveds
-puts 'Importing saveds...'
-
-old_saveds = csv_file_to_hash(File.join(Rails.root, 'db', 'seeds', 'tblSaved.csv'))
-
-# sID, uID, oID, sType, sTXT, sNum, sDMY, dtHealth, dtAuto, dtGeneral, dtProperty, dtUmbrella, isDeleted
-old_saveds.each do |old_saved|
-  saved                      = Saved.find_or_initialize_by_id(old_saved['sID'])
-  saved.user_id              = old_saved['uID']
-  saved.offer_id             = old_saved['oID']
-  saved.saved_type           = old_saved['sType']
-  saved.txt                  = old_saved['sTXT']
-  saved.num                  = old_saved['sNum']
-  saved.dmy                  = old_saved['sDMY']
-  saved.distributor_health   = old_saved['dtHealth']
-  saved.distributor_auto     = old_saved['dtAuto']
-  saved.distributor_general  = old_saved['dtGeneral']
-  saved.distributor_property = old_saved['dtProperty']
-  saved.distributor_umbrella = old_saved['dtUmbrella']
-  saved.is_deleted           = old_saved['is_deleted']
-  puts saved.save
-end
-
+# ##########################################################
+# # Import Saveds
+# puts 'Importing saveds...'
+# 
+# old_saveds = csv_file_to_hash(File.join(Rails.root, 'db', 'seeds', 'tblSaved.csv'))
+# 
+# # sID, uID, oID, sType, sTXT, sNum, sDMY, dtHealth, dtAuto, dtGeneral, dtProperty, dtUmbrella, isDeleted
+# old_saveds.each do |old_saved|
+#   saved                = Saved.find_or_initialize_by_id(old_saved['sID'])
+#   saved.user_id        = old_saved['uID']
+#   saved.offer_id       = old_saved['oID']
+#   saved.saved_type     = old_saved['sType']
+#   saved.text           = old_saved['sTXT']
+#   saved.number         = old_saved['sNum']
+#   saved.day_month_year = old_saved['sDMY']
+#   saved.health         = old_saved['dtHealth']
+#   saved.auto           = old_saved['dtAuto']
+#   saved.general        = old_saved['dtGeneral']
+#   saved.property       = old_saved['dtProperty']
+#   saved.umbrella       = old_saved['dtUmbrella']
+#   saved.is_deleted     = old_saved['is_deleted']
+#   puts saved.save
+# end
+# 
 ##########################################################
 # Import Users
 puts 'Importing users...'
@@ -122,4 +122,21 @@ old_users.each do |old_user|
   user.is_deleted     = old_user['isDeleted']
 
   puts user.save
+end
+
+##########################################################
+# Import Interests
+puts 'Importing interests...'
+
+old_interests = csv_file_to_hash(File.join(Rails.root, 'db', 'seeds', 'tblSaved.csv'))
+
+# sID, uID, oID, sType, sTXT, sNum, sDMY, dtHealth, dtAuto, dtGeneral, dtProperty, dtUmbrella, isDeleted
+old_interests.each do |old_interest|
+  interest                = Interest.find_or_initialize_by_user_id_and_offer_id(old_interest['uID'], old_interest['oID'])
+  interest.user_id        = old_interest['uID']
+  interest.offer_id       = old_interest['oID']
+  interest.response       = old_interest['sTXT']
+  interest.is_deleted     = old_interest['is_deleted']
+
+  puts interest.save
 end
