@@ -1,0 +1,120 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Distributor:</b>
+  <%= @user.distributor %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @user.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @user.password %>
+</p>
+
+<p>
+  <b>Logins:</b>
+  <%= @user.logins %>
+</p>
+
+<p>
+  <b>Name first:</b>
+  <%= @user.name_first %>
+</p>
+
+<p>
+  <b>Name last:</b>
+  <%= @user.name_last %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @user.company %>
+</p>
+
+<p>
+  <b>Annual volume:</b>
+  <%= @user.annual_volume %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @user.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @user.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @user.state %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%= @user.zip_code %>
+</p>
+
+<p>
+  <b>Phone office:</b>
+  <%= @user.phone_office %>
+</p>
+
+<p>
+  <b>Phone cell:</b>
+  <%= @user.phone_cell %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @user.fax %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @user.website %>
+</p>
+
+<p>
+  <b>Signed up:</b>
+  <%= @user.signed_up %>
+</p>
+
+<p>
+  <b>Last login:</b>
+  <%= @user.last_login %>
+</p>
+
+<p>
+  <b>New:</b>
+  <%= @user.new %>
+</p>
+
+<p>
+  <b>Is admin:</b>
+  <%= @user.is_admin %>
+</p>
+
+<p>
+  <b>Is updated:</b>
+  <%= @user.is_updated %>
+</p>
+
+<p>
+  <b>Is active:</b>
+  <%= @user.is_active %>
+</p>
+
+<p>
+  <b>Is deleted:</b>
+  <%= @user.is_deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

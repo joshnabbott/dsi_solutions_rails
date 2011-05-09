@@ -1,0 +1,53 @@
+<%= form_for(@offer) do |f| %>
+  <% if @offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+      <ul>
+      <% @offer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :distributor %><br />
+    <%= f.text_field :distributor %>
+  </div>
+  <div class="field">
+    <%= f.label :parent %><br />
+    <%= f.text_field :parent %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :sublink %><br />
+    <%= f.text_field :sublink %>
+  </div>
+  <div class="field">
+    <%= f.label :is_public %><br />
+    <%= f.check_box :is_public %>
+  </div>
+  <div class="field">
+    <%= f.label :is_deleted %><br />
+    <%= f.check_box :is_deleted %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,109 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :distributor %><br />
+    <%= f.text_field :distributor %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :logins %><br />
+    <%= f.text_field :logins %>
+  </div>
+  <div class="field">
+    <%= f.label :name_first %><br />
+    <%= f.text_field :name_first %>
+  </div>
+  <div class="field">
+    <%= f.label :name_last %><br />
+    <%= f.text_field :name_last %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :annual_volume %><br />
+    <%= f.text_field :annual_volume %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_office %><br />
+    <%= f.text_field :phone_office %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_cell %><br />
+    <%= f.text_field :phone_cell %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :signed_up %><br />
+    <%= f.datetime_select :signed_up %>
+  </div>
+  <div class="field">
+    <%= f.label :last_login %><br />
+    <%= f.datetime_select :last_login %>
+  </div>
+  <div class="field">
+    <%= f.label :new %><br />
+    <%= f.text_field :new %>
+  </div>
+  <div class="field">
+    <%= f.label :is_admin %><br />
+    <%= f.check_box :is_admin %>
+  </div>
+  <div class="field">
+    <%= f.label :is_updated %><br />
+    <%= f.check_box :is_updated %>
+  </div>
+  <div class="field">
+    <%= f.label :is_active %><br />
+    <%= f.check_box :is_active %>
+  </div>
+  <div class="field">
+    <%= f.label :is_deleted %><br />
+    <%= f.check_box :is_deleted %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

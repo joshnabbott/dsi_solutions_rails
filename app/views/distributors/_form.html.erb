@@ -1,0 +1,49 @@
+<%= form_for(@distributor) do |f| %>
+  <% if @distributor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@distributor.errors.count, "error") %> prohibited this distributor from being saved:</h2>
+
+      <ul>
+      <% @distributor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :initials %><br />
+    <%= f.text_field :initials %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %><br />
+    <%= f.text_field :logo %>
+  </div>
+  <div class="field">
+    <%= f.label :interests %><br />
+    <%= f.text_field :interests %>
+  </div>
+  <div class="field">
+    <%= f.label :terms %><br />
+    <%= f.text_area :terms %>
+  </div>
+  <div class="field">
+    <%= f.label :tac %><br />
+    <%= f.text_field :tac %>
+  </div>
+  <div class="field">
+    <%= f.label :is_deleted %><br />
+    <%= f.check_box :is_deleted %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

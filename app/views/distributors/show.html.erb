@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @distributor.name %>
+</p>
+
+<p>
+  <b>Initials:</b>
+  <%= @distributor.initials %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @distributor.description %>
+</p>
+
+<p>
+  <b>Logo:</b>
+  <%= @distributor.logo %>
+</p>
+
+<p>
+  <b>Interests:</b>
+  <%= @distributor.interests %>
+</p>
+
+<p>
+  <b>Terms:</b>
+  <%= @distributor.terms %>
+</p>
+
+<p>
+  <b>Tac:</b>
+  <%= @distributor.tac %>
+</p>
+
+<p>
+  <b>Is deleted:</b>
+  <%= @distributor.is_deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_distributor_path(@distributor) %> |
+<%= link_to 'Back', distributors_path %>

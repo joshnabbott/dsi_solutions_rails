@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Distributor:</b>
+  <%= @offer.distributor %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @offer.parent %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @offer.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @offer.description %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @offer.body %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @offer.link %>
+</p>
+
+<p>
+  <b>Sublink:</b>
+  <%= @offer.sublink %>
+</p>
+
+<p>
+  <b>Is public:</b>
+  <%= @offer.is_public %>
+</p>
+
+<p>
+  <b>Is deleted:</b>
+  <%= @offer.is_deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>
