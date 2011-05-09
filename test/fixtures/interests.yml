@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  offer: 
+  response: MyString
+  is_deleted: false
+
+two:
+  user: 
+  offer: 
+  response: MyString
+  is_deleted: false
