@@ -5,7 +5,6 @@
     <th>Distributor</th>
     <th>Username</th>
     <th>Password</th>
-    <th>Logins</th>
     <th>Name first</th>
     <th>Name last</th>
     <th>Company</th>
@@ -18,21 +17,15 @@
     <th>Phone cell</th>
     <th>Fax</th>
     <th>Website</th>
-    <th>Signed up</th>
     <th>Last login</th>
-    <th>New</th>
     <th>Is admin</th>
-    <th>Is updated</th>
     <th>Is active</th>
-    <th>Is deleted</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.distributor %></td>
+    <td><%= user.distributor.name %></td>
     <td><%= user.username %></td>
     <td><%= user.password %></td>
     <td><%= user.logins %></td>
@@ -48,20 +41,14 @@
     <td><%= user.phone_cell %></td>
     <td><%= user.fax %></td>
     <td><%= user.website %></td>
-    <td><%= user.signed_up %></td>
     <td><%= user.last_login %></td>
-    <td><%= user.new %></td>
     <td><%= user.is_admin %></td>
-    <td><%= user.is_updated %></td>
     <td><%= user.is_active %></td>
-    <td><%= user.is_deleted %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [@distributor, user] %> | <%= link_to 'Edit', [:edit, @distributor, user] %> | <%= link_to 'Destroy', [@distributor, user], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', [:new, @distributor, :user] %>
