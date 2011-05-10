@@ -132,11 +132,11 @@ old_interests = csv_file_to_hash(File.join(Rails.root, 'db', 'seeds', 'tblSaved.
 
 # sID, uID, oID, sType, sTXT, sNum, sDMY, dtHealth, dtAuto, dtGeneral, dtProperty, dtUmbrella, isDeleted
 old_interests.each do |old_interest|
-  interest                = Interest.find_or_initialize_by_user_id_and_offer_id(old_interest['uID'], old_interest['oID'])
-  interest.user_id        = old_interest['uID']
-  interest.offer_id       = old_interest['oID']
-  interest.response       = old_interest['sTXT']
-  interest.is_deleted     = old_interest['is_deleted']
+  interest            = Interest.find_or_initialize_by_user_id_and_offer_id(old_interest['uID'], old_interest['oID'])
+  interest.user_id    = old_interest['uID']
+  interest.offer_id   = old_interest['oID']
+  interest.response   = old_interest['sTXT']
+  interest.is_deleted = old_interest['is_deleted']
 
   puts interest.save
 end
