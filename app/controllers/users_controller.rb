@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = @distributor.users
+    @users = @distributor.users.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
