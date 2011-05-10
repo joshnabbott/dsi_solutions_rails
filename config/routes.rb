@@ -1,4 +1,6 @@
 DsiSolutions::Application.routes.draw do
+  devise_for :users
+
   root :to => "distributors#index"
 
   resources :distributors do
