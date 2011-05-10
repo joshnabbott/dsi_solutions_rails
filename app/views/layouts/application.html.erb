@@ -7,6 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <ul id="main-navigation">
+    <li>Welcome back, <%= current_user.name_first %></li>
+    <li><%= link_to 'Distributors', distributors_path %></li>
+    <li><%= link_to 'Pages', pages_path %></li>
+    <li><%= link_to 'Sign Out', destroy_user_session_path %></li>
+  </ul>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 

@@ -11,8 +11,6 @@
     <th>Tac</th>
     <th>Is deleted</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @distributors.each do |distributor| %>
@@ -25,9 +23,7 @@
     <td><%= distributor.terms %></td>
     <td><%= distributor.tac %></td>
     <td><%= distributor.is_deleted %></td>
-    <td><%= link_to 'Show', distributor %></td>
-    <td><%= link_to 'Edit', edit_distributor_path(distributor) %></td>
-    <td><%= link_to 'Destroy', distributor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Users', [distributor, :users] %> | <%= link_to 'Offers', [distributor, :offers] %> | <%= link_to 'Show', distributor %> | <%= link_to 'Edit', edit_distributor_path(distributor) %> | <%= link_to 'Destroy', distributor, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

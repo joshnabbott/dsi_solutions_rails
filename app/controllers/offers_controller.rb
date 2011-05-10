@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.xml
   def index
-    @offers = Offer.all
+    @offers = @distributor.offers
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class OffersController < ApplicationController
   # GET /offers/new
   # GET /offers/new.xml
   def new
-    @offer = Offer.new
+    @offer = @distributor.offers.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,12 +40,12 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.xml
   def create
-    @offer = Offer.new(params[:offer])
+    @offer = @distributor.offers.build(params[:offer])
 
     respond_to do |format|
       if @offer.save
-        format.html { redirect_to(@offer, :notice => 'Offer was successfully created.') }
-        format.xml  { render :xml => @offer, :status => :created, :location => @offer }
+        format.html { redirect_to(@distributor, @offer, :notice => 'Offer was successfully created.') }
+        format.xml  { render :xml => @offer, :status => :created, :location => [@distributor, @offer] }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @offer.errors, :status => :unprocessable_entity }
@@ -60,7 +60,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.update_attributes(params[:offer])
-        format.html { redirect_to(@offer, :notice => 'Offer was successfully updated.') }
+        format.html { redirect_to(@distributor, @offer, :notice => 'Offer was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,7 +76,7 @@ class OffersController < ApplicationController
     @offer.destroy
 
     respond_to do |format|
-      format.html { redirect_to(offers_url) }
+      format.html { redirect_to([@distributor, :offers]) }
       format.xml  { head :ok }
     end
   end

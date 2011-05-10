@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Distributor</th>
-    <th>Parent</th>
+    <!-- <th>Parent</th> -->
     <th>Name</th>
     <th>Description</th>
     <th>Body</th>
@@ -12,14 +12,12 @@
     <th>Is public</th>
     <th>Is deleted</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @offers.each do |offer| %>
   <tr>
-    <td><%= offer.distributor %></td>
-    <td><%= offer.parent %></td>
+    <td><%= offer.distributor.name %></td>
+    <!-- <td><%#= offer.parent %></td> -->
     <td><%= offer.name %></td>
     <td><%= offer.description %></td>
     <td><%= offer.body %></td>
@@ -27,13 +25,11 @@
     <td><%= offer.sublink %></td>
     <td><%= offer.is_public %></td>
     <td><%= offer.is_deleted %></td>
-    <td><%= link_to 'Show', offer %></td>
-    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-    <td><%= link_to 'Destroy', offer, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [@distributor, offer] %> | <%= link_to 'Edit', [:edit, @distributor, offer] %> | <%= link_to 'Destroy', [@distributor, offer], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Offer', new_offer_path %>
+<%= link_to 'New Offer', [:new, @distributor, :offer] %>

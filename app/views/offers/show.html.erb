@@ -5,10 +5,10 @@
   <%= @offer.distributor %>
 </p>
 
-<p>
+<!-- <p>
   <b>Parent:</b>
-  <%= @offer.parent %>
-</p>
+  <%#= @offer.parent %>
+</p> -->
 
 <p>
   <b>Name:</b>
@@ -46,5 +46,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_offer_path(@offer) %> |
-<%= link_to 'Back', offers_path %>
+<%= link_to 'Edit', [:edit, @distributor, @offer] %> |
+<%= link_to 'Back', [@distributor, :offers] %>
