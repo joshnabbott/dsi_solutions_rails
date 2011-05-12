@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :distributor %><br />
-    <%= f.collection_select :distributor, Distributor.all, :id, :name %>
+    <%= f.label :distributor_id %><br />
+    <%= f.collection_select :distributor_id, Distributor.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -23,10 +23,14 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div> -->
   <div class="field">
     <%= f.label :name_first %><br />
     <%= f.text_field :name_first %>
@@ -75,18 +79,18 @@
     <%= f.label :website %><br />
     <%= f.text_field :website %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :new %><br />
     <%= f.text_field :new %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :is_admin %><br />
     <%= f.check_box :is_admin %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :is_updated %><br />
     <%= f.check_box :is_updated %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :is_active %><br />
     <%= f.check_box :is_active %>
@@ -94,4 +98,10 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <h3>Interests</h3>
+  <%= f.fields_for :interests do |interest_fields| %>
+    <p><%= interest_fields.object.offer.name %> <%= interest_fields.select :response, [['No', 'no'], ['Yes', 'yes'], ['Maybe', 'maybe']] %></p>
+    <%= interest_fields.hidden_field :offer_id %>
+  <%- end -%>
 <% end %>

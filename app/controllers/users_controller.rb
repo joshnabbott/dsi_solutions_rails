@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   # GET /users/new.xml
   def new
     @user = @distributor.users.build
+    set_interests_for_user!
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    set_interests_for_user!
   end
 
   # POST /users
@@ -78,6 +80,19 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to([@distributor, :users]) }
       format.xml  { head :ok }
+    end
+  end
+
+protected
+  def set_interests_for_user!
+    if @user.new_record?
+      @distributor.offers.all.each do |offer|
+        @user.interests.build(:offer => offer)
+      end
+    else
+      (@distributor.offers.all - @user.offers).each do |offer|
+        @user.interests.build(:offer => offer)
+      end
     end
   end
 end
