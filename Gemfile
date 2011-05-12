@@ -7,7 +7,8 @@ gem 'rails', '3.0.6'
 
 gem 'devise'
 gem 'fastercsv'
-gem 'mysql2'
+gem 'pg'
+# gem 'mysql2'
 gem "will_paginate", "~> 3.0.pre2"
 
 # Use unicorn as the web server
