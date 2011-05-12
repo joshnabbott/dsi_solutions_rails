@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: dsi_solutions_development
+  pool: 5
+  username: joshnabbott
+  password:
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: dsi_solutions_test
+  pool: 5
+  username: joshnabbott
+  password:
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: dsi_solutions_production
+  pool: 5
+  username: root
+  password:
